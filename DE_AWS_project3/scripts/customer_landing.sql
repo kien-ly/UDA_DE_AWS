@@ -6,9 +6,9 @@ CREATE EXTERNAL TABLE IF NOT EXISTS `project`.`customer_landing` (
   `serialnumber` string,
   `registrationdate` bigint,
   `lastupdatedate` bigint,
-  `sharewithresearchasofdate` bigint,
-  `sharewithfriendsasofdate` bigint,
-  `sharewithpublicasofdate` bigint
+  `sharewithresearchasofdate` float,
+  `sharewithfriendsasofdate` float,
+  `sharewithpublicasofdate` float
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 WITH SERDEPROPERTIES (
@@ -18,5 +18,5 @@ WITH SERDEPROPERTIES (
   'mapping' = 'TRUE'
 )
 STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION 's3://udacity-glue-spark-bucket/project/customers/landing/'
+LOCATION 's3://udacity-glue-spark-bucket/project/customer/landing/'
 TBLPROPERTIES ('classification' = 'json');

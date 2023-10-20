@@ -25,42 +25,72 @@ Some of the early adopters have agreed to share their data for research purposes
 ### Landing Zone
 
 **Glue Tables**:
-
-- [customer_landing.sql](scripts/customer_landing.sql)
-- [accelerometer_landing.sql](scripts/accelerometer_landing.sql)
-
-**Athena**:
-Landing Zone data query results
-
+Use Athena to create Glue tables, use these sql scripts:
 *Customer Landing*:
-
+- [customer_landing.sql](scripts/customer_landing.sql)
 <figure>
   <img src="images/customer_landing.png" alt="Customer Landing data" width=60% height=60%>
 </figure>
 
 *Accelerometer Landing*:
 
+- [accelerometer_landing.sql](scripts/accelerometer_landing.sql)
+
 <figure>
   <img src="images/accelerometer_landing.png" alt="Accelerometer Landing data" width=60% height=60%>
+</figure>
+
+*Step trainer Landing*:
+
+- [step_trainer_landing.sql](scripts/step_trainer_landing.sql)
+
+<figure>
+  <img src="images/step_trainer_landing.png" alt="Step trainer Landing data" width=60% height=60%>
 </figure>
 
 ### Trusted Zone
 
 **Glue job scripts**:
+Use glue studio to create these scripts:
+<figure>
+  <img src="images/accelerometer_trust_zone.png" alt="accelerometer_trust_diagram" width=60% height=60%>
+</figure>
 
 - [customer_landing_to_trusted.py](scripts/customer_landing_to_trusted.py)
 - [accelerometer_landing_to_trusted_zone.py](scripts/accelerometer_landing_to_trusted.py)
+- [step_trainer_landing_to_trusted_zone.py](scripts/step_trainer_landing_to_trusted.py)
 
-**Athena**:
+and click run to run these glue jobs
+<figure>
+  <img src="images/job_accelerometer_trust.png" alt="job_accelerometer_trust" width=60% height=60%>
+</figure>
+
+**Use Athena to show results**:
 Trusted Zone Query results:
 
 <figure>
   <img src="images/customer_trusted.png" alt="Customer Truested data" width=60% height=60%>
 </figure>
 
+<figure>
+  <img src="images/accelerometer_trusted.png" alt="accelerometer_trusted_data" width=60% height=60%>
+</figure>
+
+<figure>
+  <img src="images/step_trainer_trusted.png" alt="step_trainer_trusted_data" width=60% height=60%>
+</figure>
+
 ### Curated Zone
 
 **Glue job scripts**:
-
 - [customer_trusted_to_curated.py](scripts/customer_trusted_to_curated.py)
+
+<figure>
+  <img src="images/customer_curated.png" alt="customer_curated data" width=60% height=60%>
+</figure>
+
 - [trainer_trusted_to_curated.py](scripts/trainer_trusted_to_curated.py)
+
+<figure>
+  <img src="images/machine_learning_curated.png" alt="Machine learning curated data" width=60% height=60%>
+</figure>

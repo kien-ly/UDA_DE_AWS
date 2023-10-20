@@ -12,58 +12,59 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args["JOB_NAME"], args)
 
-# Script generated for node Customer Curated
-CustomerCurated_node1676402494135 = glueContext.create_dynamic_frame.from_catalog(
+# Script generated for node customer_curated
+customer_curated_node1697789624653 = glueContext.create_dynamic_frame.from_catalog(
     database="project",
     table_name="customer_curated",
-    transformation_ctx="CustomerCurated_node1676402494135",
+    transformation_ctx="customer_curated_node1697789624653",
 )
 
-# Script generated for node Step Trainer Landing
-StepTrainerLanding_node1 = glueContext.create_dynamic_frame.from_options(
-    format_options={"multiline": False},
-    connection_type="s3",
-    format="json",
-    connection_options={
-        "paths": ["s3://udacity-glue-spark-bucket/project/step_trainer/landing/"],
-        "recurse": True,
-    },
-    transformation_ctx="StepTrainerLanding_node1",
+# Script generated for node step_trainer_landing
+step_trainer_landing_node1697789640534 = glueContext.create_dynamic_frame.from_catalog(
+    database="project",
+    table_name="step_trainer_landing",
+    transformation_ctx="step_trainer_landing_node1697789640534",
 )
 
-# Script generated for node Join Customer and Step Trainer
-JoinCustomerandStepTrainer_node1676402624725 = Join.apply(
-    frame1=StepTrainerLanding_node1,
-    frame2=CustomerCurated_node1676402494135,
-    keys1=["serialNumber"],
+# Script generated for node Join
+Join_node1697789673496 = Join.apply(
+    frame1=step_trainer_landing_node1697789640534,
+    frame2=customer_curated_node1697789624653,
+    keys1=["serialnumber"],
     keys2=["serialnumber"],
-    transformation_ctx="JoinCustomerandStepTrainer_node1676402624725",
+    transformation_ctx="Join_node1697789673496",
 )
 
 # Script generated for node Drop Fields
-DropFields_node1676402768067 = DropFields.apply(
-    frame=JoinCustomerandStepTrainer_node1676402624725,
+DropFields_node1697789702414 = DropFields.apply(
+    frame=Join_node1697789673496,
     paths=[
-        "customername",
-        "email",
         "phone",
-        "birthday",
-        "serialnumber",
-        "registrationdate",
-        "lastupdatedate",
-        "sharewithresearchasofdate",
+        "email",
+        "customername",
         "sharewithfriendsasofdate",
         "sharewithpublicasofdate",
+        "sharewithresearchasofdate",
+        "lastupdatedate",
+        "birthday",
+        "`.serialnumber`",
+        "registrationdate",
     ],
-    transformation_ctx="DropFields_node1676402768067",
+    transformation_ctx="DropFields_node1697789702414",
 )
 
-# Script generated for node Step Trainer Trusted
-StepTrainerTrusted_node1676576584339 = glueContext.write_dynamic_frame.from_catalog(
-    frame=DropFields_node1676402768067,
-    database="project",
-    table_name="step_trainer_trusted",
-    transformation_ctx="StepTrainerTrusted_node1676576584339",
+# Script generated for node step_trainer_trusted
+step_trainer_trusted_node1697815469018 = glueContext.getSink(
+    path="s3://udacity-glue-spark-bucket/project/step_trainer/curated/",
+    connection_type="s3",
+    updateBehavior="UPDATE_IN_DATABASE",
+    partitionKeys=[],
+    enableUpdateCatalog=True,
+    transformation_ctx="step_trainer_trusted_node1697815469018",
 )
-
+step_trainer_trusted_node1697815469018.setCatalogInfo(
+    catalogDatabase="project", catalogTableName="step_trainer_trusted"
+)
+step_trainer_trusted_node1697815469018.setFormat("json")
+step_trainer_trusted_node1697815469018.writeFrame(DropFields_node1697789702414)
 job.commit()
