@@ -26,6 +26,7 @@ Some of the early adopters have agreed to share their data for research purposes
 
 **Glue Tables**:
 Use Athena to create Glue tables, use these sql scripts:
+
 *Customer Landing*:
 - [customer_landing.sql](scripts/customer_landing.sql)
 <figure>
@@ -50,7 +51,7 @@ Use Athena to create Glue tables, use these sql scripts:
 
 ### Trusted Zone
 
-**Glue job scripts**:
+**Glue job scripts**
 Use glue studio to create these scripts:
 <figure>
   <img src="images/accelerometer_trust_zone.png" alt="accelerometer_trust_diagram" width=60% height=60%>
@@ -65,7 +66,7 @@ and click run to run these glue jobs
   <img src="images/job_accelerometer_trust.png" alt="job_accelerometer_trust" width=60% height=60%>
 </figure>
 
-**Use Athena to show results**:
+**Use Athena to show results**
 Trusted Zone Query results:
 
 <figure>
