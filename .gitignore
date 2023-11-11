@@ -1,6 +1,14 @@
 zip/
 DE_AWS_project2/dwh.cfg
 *.zip
+*.log
+*.pyc
+*.env
+
 nd027-Data-Engineering-Data-Lakes-AWS-Exercises-main/
 DE_AWS_project3/project/
 DE_AWS_project3/project3_submit/
+DE_AWS_project4/source_aHung
+DE_AWS_project4/airflow
+DE_AWS_project4/awsuser_credentials.csv
+DE_AWS_project4/final/logs/scheduler/latest

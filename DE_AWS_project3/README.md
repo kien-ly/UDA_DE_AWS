@@ -30,7 +30,7 @@ Use Athena to create Glue tables, use these sql scripts:
 *Customer Landing*:
 - [customer_landing.sql](scripts/customer_landing.sql)
 <figure>
-  <img src="images/customer_landing.png" alt="Customer Landing data" width=60% height=60%>
+  <img src="images/customer_landing.png" alt="Customer Landing data" width=100% height=100%>
 </figure>
 
 *Accelerometer Landing*:
@@ -38,7 +38,7 @@ Use Athena to create Glue tables, use these sql scripts:
 - [accelerometer_landing.sql](scripts/accelerometer_landing.sql)
 
 <figure>
-  <img src="images/accelerometer_landing.png" alt="Accelerometer Landing data" width=60% height=60%>
+  <img src="images/accelerometer_landing.png" alt="Accelerometer Landing data" width=100% height=100%>
 </figure>
 
 *Step trainer Landing*:
@@ -46,7 +46,7 @@ Use Athena to create Glue tables, use these sql scripts:
 - [step_trainer_landing.sql](scripts/step_trainer_landing.sql)
 
 <figure>
-  <img src="images/step_trainer_landing.png" alt="Step trainer Landing data" width=60% height=60%>
+  <img src="images/step_trainer_landing.png" alt="Step trainer Landing data" width=100% height=100%>
 </figure>
 
 ### Trusted Zone
@@ -54,7 +54,7 @@ Use Athena to create Glue tables, use these sql scripts:
 **Glue job scripts**
 Use glue studio to create these scripts:
 <figure>
-  <img src="images/accelerometer_trust_zone.png" alt="accelerometer_trust_diagram" width=60% height=60%>
+  <img src="images/accelerometer_trust_zone.png" alt="accelerometer_trust_diagram" width=100% height=100%>
 </figure>
 
 - [customer_landing_to_trusted.py](scripts/customer_landing_to_trusted.py)
@@ -63,22 +63,22 @@ Use glue studio to create these scripts:
 
 and click run to run these glue jobs
 <figure>
-  <img src="images/job_accelerometer_trust.png" alt="job_accelerometer_trust" width=60% height=60%>
+  <img src="images/job_accelerometer_trust.png" alt="job_accelerometer_trust" width=100% height=100%>
 </figure>
 
 **Use Athena to show results**
 Trusted Zone Query results:
 
 <figure>
-  <img src="images/customer_trusted.png" alt="Customer Truested data" width=60% height=60%>
+  <img src="images/customer_trusted.png" alt="Customer Truested data" width=100% height=100%>
 </figure>
 
 <figure>
-  <img src="images/accelerometer_trusted.png" alt="accelerometer_trusted_data" width=60% height=60%>
+  <img src="images/accelerometer_trusted.png" alt="accelerometer_trusted_data" width=100% height=100%>
 </figure>
 
 <figure>
-  <img src="images/step_trainer_trusted.png" alt="step_trainer_trusted_data" width=60% height=60%>
+  <img src="images/step_trainer_trusted.png" alt="step_trainer_trusted_data" width=100% height=100%>
 </figure>
 
 ### Curated Zone
@@ -87,11 +87,11 @@ Trusted Zone Query results:
 - [customer_trusted_to_curated.py](scripts/customer_trusted_to_curated.py)
 
 <figure>
-  <img src="images/customer_curated.png" alt="customer_curated data" width=60% height=60%>
+  <img src="images/customer_curated.png" alt="customer_curated data" width=100% height=100%>
 </figure>
 
 - [trainer_trusted_to_curated.py](scripts/trainer_trusted_to_curated.py)
 
 <figure>
-  <img src="images/machine_learning_curated.png" alt="Machine learning curated data" width=60% height=60%>
+  <img src="images/machine_learning_curated.png" alt="Machine learning curated data" width=100% height=100%>
 </figure>

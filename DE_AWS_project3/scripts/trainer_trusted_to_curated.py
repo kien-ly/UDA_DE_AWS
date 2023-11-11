@@ -35,13 +35,6 @@ Join_node1697791740134 = Join.apply(
     transformation_ctx="Join_node1697791740134",
 )
 
-# Script generated for node Drop Fields
-DropFields_node1697791832615 = DropFields.apply(
-    frame=Join_node1697791740134,
-    paths=["user"],
-    transformation_ctx="DropFields_node1697791832615",
-)
-
 # Script generated for node Amazon S3
 AmazonS3_node1697791977285 = glueContext.getSink(
     path="s3://udacity-glue-spark-bucket/project/machine_learning_curated/",
